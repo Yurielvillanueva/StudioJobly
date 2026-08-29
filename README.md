@@ -1,4 +1,4 @@
-﻿# SwipeCareer
+﻿﻿# SwipeCareer
 
 A simple interactive learning website for understanding Java loops through a swipe-based interface.
 
