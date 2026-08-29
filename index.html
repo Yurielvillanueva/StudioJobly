@@ -1,48 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SwipeCareer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="app">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SwipeCareer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="logo">SwipeCareer</div>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#">Home</a>
+        <a href="#">Find Jobs</a>
+        <a href="#">Companies</a>
+        <a href="#">APP</a>
+        <a href="#">Career Guide</a>
+        <a href="#">Remote Jobs</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="employer">I'm an Employer</a>
+        <button class="lang-btn" type="button">EN</button>
+        <button class="started-btn" type="button">Get Started</button>
+      </div>
+    </header>
 
-  <div class="topbar">
-    <div class="logo">Swipe<span>Career</span></div>
-    <div class="streak">♥ 0 matches · 1 / 10</div>
-  </div>
+    <main class="page-wrap">
+      <section class="search-panel">
+        <div class="search-field">
+          <label>Location</label>
+          <div class="fake-select">Anywhere</div>
+        </div>
 
-  <div class="stack" id="stack"></div>
+        <div class="search-field large-field">
+          <label>Job title or company</label>
+          <input id="searchInput" type="text" placeholder="Search jobs" value="" />
+        </div>
 
-  <div class="actions">
-    <button class="actionBtn nope" id="nopeBtn" aria-label="Skip this profile">✕</button>
-    <button class="actionBtn info" id="infoBtn" aria-label="See full profile">i</button>
-    <button class="actionBtn love" id="loveBtn" aria-label="Like this profile">♥</button>
-  </div>
-</div>
+        <button class="search-btn" type="button">Search</button>
+      </section>
 
-<div class="sheet-overlay" id="sheetOverlay">
-  <div class="sheet">
-    <h3 id="sheetTitle">How it works</h3>
-    <div class="sub" id="sheetSub"></div>
-    <div class="section-label">Key skills</div>
-    <div class="tags sheet-tags" id="sheetSkills"></div>
-    <div class="section-label">About</div>
-    <div class="explain" id="sheetExplain"></div>
-    <button class="closeSheet" id="closeSheet">Got it</button>
-  </div>
-</div>
-<div class="match-overlay" id="matchOverlay">
-  <h1>It clicked!</h1>
-  <div class="match-photo" id="matchPhoto"></div>
-  <p id="matchText">You and this profile are clearly compatible.</p>
-  <button class="match-cta" id="viewRecipe">Review the profile</button>
-  <button class="keep-swiping" id="keepSwiping">Keep swiping</button>
-</div>
-<script src="script.js"></script>
-</body>
+      <section class="filters-row">
+        <div class="filter-box">Relevance</div>
+        <div class="filter-box">Job function</div>
+        <div class="filter-box">Salary</div>
+        <div class="filter-box">Job type</div>
+        <div class="loop-filters" aria-label="Loop categories">
+          <button class="loop-filter active" type="button" data-filter="all">All</button>
+          <button class="loop-filter" type="button" data-filter="for">For loop</button>
+          <button class="loop-filter" type="button" data-filter="while">While loop</button>
+          <button class="loop-filter" type="button" data-filter="doWhile">Do-while loop</button>
+        </div>
+        <button class="reset-btn" type="button">Reset filters</button>
+      </section>
+
+      <section class="content-grid">
+        <div class="jobs-column">
+          <div id="jobList" class="job-list" aria-live="polite"></div>
+        </div>
+
+        <aside class="sidebar">
+          <div id="jobDetails" class="job-detail-panel" aria-live="polite">
+            <div class="detail-header">
+              <span class="detail-tag">Selected job</span>
+            </div>
+            <h3>Choose a role to view details</h3>
+            <p>Tap any listing to learn more about the role, salary, work setup, and responsibilities.</p>
+          </div>
+
+          <div class="promo-card promo-purple">
+            <span class="promo-tag">Exclusive VIP</span>
+            <h3>Priority Access to AI Career Coaching Feature</h3>
+            <div class="promo-spot">V</div>
+          </div>
+
+          <div class="promo-card promo-blue">
+            <div class="resume-box">
+              <div class="resume-lines"></div>
+            </div>
+            <h3>Craft A Winning Resume In 4 Easy Steps</h3>
+            <button type="button">Start Crafting</button>
+          </div>
+
+          <div class="mini-panel">
+            <h4>Related Search</h4>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>

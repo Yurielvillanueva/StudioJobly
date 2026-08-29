@@ -1,76 +1,223 @@
-const profiles = [
-  { name: "Alex", age: 24, gender: "Male", role: "Frontend Web Developer", photo: "img/alex.jpg", badge: "Frontend", compat: 92, tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "REST APIs"], bio: "3 years of hands-on experience building fast, responsive web applications. Focused on page speed optimization, pixel-perfect UI rendering, and clean code architecture." },
-  { name: "Samantha", age: 28, gender: "Female", role: "Backend Developer", photo: "img/samantha.jpg", badge: "Backend", compat: 90, tags: ["Node.js", "Express", "PostgreSQL", "MongoDB", "Docker"], bio: "Mid-level backend engineer specializing in scalable RESTful APIs, microservices, and database optimization. Track record of reducing database query latency by over 30%." },
-  { name: "Ethan", age: 22, gender: "Male", role: "Junior Full-Stack Developer", photo: "img/ethan.jpg", badge: "Full-Stack", compat: 86, tags: ["Java", "Spring Boot", "MySQL", "HTML5/CSS3", "Git"], bio: "Recent IT graduate with strong Object-Oriented Programming fundamentals. Skilled in building full-stack web applications and quick to adapt to new frameworks in an agile environment." },
-  { name: "Priya", age: 26, gender: "Female", role: "UI/UX Designer & Web Developer", photo: "img/priya.jpg", badge: "Design + Dev", compat: 94, tags: ["Figma", "Vue.js", "Tailwind CSS", "JavaScript", "Accessibility"], bio: "Hybrid designer and frontend engineer specializing in converting Figma wireframes into accessible, interactive components. Driven by user-centric design and smooth micro-interactions." },
-  { name: "Marcus", age: 31, gender: "Male", role: "Cloud & DevOps Engineer", photo: "img/marcus.jpg", badge: "DevOps", compat: 89, tags: ["AWS", "Kubernetes", "Terraform", "CI/CD", "Linux"], bio: "6 years of experience managing enterprise cloud infrastructure and automating deployment workflows. Experienced in maintaining high availability, zero-downtime updates, and server security." },
-  { name: "Chloe", age: 25, gender: "Female", role: "QA Automation Engineer", photo: "img/chloe.jpg", badge: "Quality", compat: 88, tags: ["Selenium", "Cypress", "JavaScript", "Python", "Postman", "Jest"], bio: "Detail-oriented QA specialist focused on end-to-end automated testing for web applications. Experienced in writing regression suites, stress testing APIs, and catching critical bugs prior to production release." },
-  { name: "David", age: 29, gender: "Male", role: "Database Administrator & SQL Developer", photo: "img/david.jpg", badge: "Data", compat: 87, tags: ["PostgreSQL", "MySQL", "SQL Server", "Redis", "ETL"], bio: "Database specialist experienced in architecting relational schemas, optimizing complex SQL queries, and handling data migration projects while ensuring complete data integrity." },
-  { name: "Jordan", age: 27, gender: "Non-binary", role: "Cross-Platform & Mobile Web Developer", photo: "img/jordan.jpg", badge: "Mobile Web", compat: 91, tags: ["React Native", "React.js", "TypeScript", "GraphQL", "Firebase"], bio: "Builds unified web and mobile experiences from a single codebase. Focused on efficient state management, offline-first capabilities, and smooth mobile web performance." },
-  { name: "Hannah", age: 23, gender: "Female", role: "Application Security Specialist", photo: "img/hannah.jpg", badge: "Security", compat: 93, tags: ["OWASP Top 10", "Pen Testing", "Python", "Network Security", "OAuth 2.0"], bio: "Cybersecurity professional focused on auditing web application code, discovering security vulnerabilities, and implementing robust authentication and encryption standards." },
-  { name: "Carlos", age: 33, gender: "Male", role: "Senior IT Systems & Network Administrator", photo: "img/carlos.jpg", badge: "Infrastructure", compat: 85, tags: ["Cisco Networking", "Active Directory", "Linux", "Hardware", "Troubleshooting"], bio: "8+ years overseeing enterprise IT infrastructure, configuring network topologies, and resolving critical system bottlenecks. Dedicated to maximum uptime and network reliability." }
+const jobs = [
+  {
+    title: 'Product Manager',
+    salary: '$50k - $80k',
+    location: 'Metro Manila',
+    type: 'Full-time',
+    experience: '4+ Yrs',
+    education: 'Bachelor',
+    company: 'LoopWorks',
+    companyMeta: '100-500',
+    photo: 'img/ethan.jpg',
+    category: 'for',
+    roles: ['Product', 'Strategy', 'Research'],
+    description: 'Lead product strategy, prioritize roadmap goals, and turn customer feedback into measurable growth.',
+    requirements: ['Define product roadmap', 'Analyze product metrics', 'Coordinate with design and engineering']
+  },
+  {
+    title: 'Frontend Developer',
+    salary: '$42k - $65k',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '2-4 Yrs',
+    education: 'Bachelor',
+    company: 'CodeNest',
+    companyMeta: '50-100',
+    photo: 'img/alex.jpg',
+    category: 'for',
+    roles: ['UI', 'JavaScript', 'Frontend'],
+    description: 'Build responsive interfaces and improve core user journey flows using modern frontend practices.',
+    requirements: ['HTML, CSS, JavaScript', 'Responsive UI design', 'Accessibility and performance']
+  },
+  {
+    title: 'Quality Assurance Specialist',
+    salary: '$38k - $55k',
+    location: 'Cebu',
+    type: 'Hybrid',
+    experience: '1-3 Yrs',
+    education: 'College',
+    company: 'CheckLoop',
+    companyMeta: '100-500',
+    photo: 'img/samantha.jpg',
+    category: 'while',
+    roles: ['Testing', 'Bug Fixing', 'QA'],
+    description: 'Validate product quality, document issues, and collaborate with engineering to improve release stability.',
+    requirements: ['Test case planning', 'Bug reporting', 'Regression validation']
+  },
+  {
+    title: 'Support Engineer',
+    salary: '$36k - $52k',
+    location: 'Quezon City',
+    type: 'On-site',
+    experience: '2-5 Yrs',
+    education: 'Bachelor',
+    company: 'NorthTrack',
+    companyMeta: '50-100',
+    photo: 'img/priya.jpg',
+    category: 'while',
+    roles: ['Monitoring', 'Support', 'Systems'],
+    description: 'Monitor live systems, troubleshoot incidents, and keep customer operations reliable and responsive.',
+    requirements: ['Incident handling', 'Customer communication', 'System monitoring']
+  },
+  {
+    title: 'Data Analyst',
+    salary: '$45k - $70k',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '2-4 Yrs',
+    education: 'Bachelor',
+    company: 'DataLoop',
+    companyMeta: '100-500',
+    photo: 'img/david.jpg',
+    category: 'doWhile',
+    roles: ['SQL', 'Reports', 'Analytics'],
+    description: 'Turn business data into actionable insights and dashboards that improve hiring, operations, and growth decisions.',
+    requirements: ['SQL and Excel', 'Data storytelling', 'Dashboard creation']
+  },
+  {
+    title: 'Backend Engineer',
+    salary: '$60k - $90k',
+    location: 'Remote',
+    type: 'Full-time',
+    experience: '3-6 Yrs',
+    education: 'Bachelor',
+    company: 'ServerLoop',
+    companyMeta: '50-100',
+    photo: 'img/hannah.jpg',
+    category: 'doWhile',
+    roles: ['Java', 'API', 'Backend'],
+    description: 'Design reliable services, improve APIs, and ensure backend systems stay efficient and secure under load.',
+    requirements: ['REST API design', 'Database optimization', 'Performance tuning']
+  }
 ];
 
-let index = 0;
-let matches = 0;
-const stackEl = document.getElementById('stack');
-const sheetOverlay = document.getElementById('sheetOverlay');
-const sheetTitle = document.getElementById('sheetTitle');
-const sheetSub = document.getElementById('sheetSub');
-const sheetSkills = document.getElementById('sheetSkills');
-const sheetExplain = document.getElementById('sheetExplain');
-const matchOverlay = document.getElementById('matchOverlay');
-const matchPhoto = document.getElementById('matchPhoto');
-const matchText = document.getElementById('matchText');
-const streakEl = document.querySelector('.streak');
+const jobList = document.getElementById('jobList');
+const searchInput = document.getElementById('searchInput');
+const filterButtons = document.querySelectorAll('.loop-filter');
+const jobDetails = document.getElementById('jobDetails');
 
-function currentProfile(offset = 0) { return profiles[(index + offset) % profiles.length]; }
-function updateCounter() { streakEl.textContent = `♥ ${matches} matches · ${index + 1} / ${profiles.length}`; }
-
-function renderStack(){
-  stackEl.innerHTML = '';
-  let i = 0;
-  while(i < 3){
-    const c = currentProfile(i);
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="photo" style="background-image:url('${c.photo}')">
-        <div class="badge">${c.badge}</div><div class="deck-count">${((index + i) % profiles.length) + 1} / ${profiles.length}</div>
-        <div class="stamp like">Liked</div><div class="stamp nope">Pass</div>
-        <div class="caption"><h2>${c.name}, ${c.age}</h2><p>${c.role}</p></div>
+function updateDetails(job) {
+  if (!job) {
+    jobDetails.innerHTML = `
+      <div class="detail-header">
+        <span class="detail-tag">Selected job</span>
       </div>
-      <div class="details">
-        <div class="compat"><div class="label">Match</div><div class="gauge"><i style="width:${c.compat}%"></i></div><div class="gauge-pct">${c.compat}%</div></div>
-        <div class="tags">${c.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
-        <p class="bio">${c.bio}</p><button class="infoBtn">View full profile →</button>
-      </div>`;
-    if(i === 0) makeSwipeable(card, c);
-    card.querySelector('.infoBtn').addEventListener('click', () => openSheet(c));
-    stackEl.appendChild(card);
-    i++;
+      <h3>Choose a role to view details</h3>
+      <p>Tap any listing to learn more about the role, salary, work setup, and responsibilities.</p>
+    `;
+    return;
   }
-  updateCounter();
+
+  jobDetails.innerHTML = `
+    <div class="detail-header">
+      <span class="detail-tag">${job.category === 'for' ? 'For loop' : job.category === 'while' ? 'While loop' : 'Do-while loop'}</span>
+    </div>
+    <div class="detail-company">
+      <img src="${job.photo}" alt="${job.company} logo" />
+      <div>
+        <h3>${job.title}</h3>
+        <p>${job.company}</p>
+      </div>
+    </div>
+    <div class="detail-meta">
+      <span>${job.location}</span>
+      <span>${job.type}</span>
+      <span>${job.salary}</span>
+    </div>
+    <p class="detail-description">${job.description}</p>
+    <div class="detail-requirements">
+      <h4>Requirements</h4>
+      <ul>
+        ${job.requirements.map((item) => `<li>${item}</li>`).join('')}
+      </ul>
+    </div>
+    <button class="detail-apply" type="button">Apply now</button>
+  `;
 }
 
-function makeSwipeable(card, item){
-  let startX = 0, startY = 0, dx = 0, dy = 0, dragging = false;
-  const likeStamp = card.querySelector('.stamp.like');
-  const nopeStamp = card.querySelector('.stamp.nope');
-  function onDown(e){ dragging = true; startX = e.clientX; startY = e.clientY; card.style.transition = 'none'; card.setPointerCapture(e.pointerId); }
-  function onMove(e){ if(!dragging) return; dx = e.clientX - startX; dy = e.clientY - startY; card.style.transform = `translate(${dx}px, ${dy}px) rotate(${dx / 18}deg)`; const opacity = Math.min(Math.abs(dx) / 90, 1); likeStamp.style.opacity = dx > 0 ? opacity : 0; nopeStamp.style.opacity = dx < 0 ? opacity : 0; }
-  function onUp(){ if(!dragging) return; dragging = false; card.style.transition = ''; if(Math.abs(dx) > 110) finishSwipe(dx > 0 ? 1 : -1); else { card.style.transform = ''; likeStamp.style.opacity = 0; nopeStamp.style.opacity = 0; } dx = 0; dy = 0; }
-  function finishSwipe(dir){ card.style.transform = `translate(${dir * 680}px, ${dy}px) rotate(${dir * 30}deg)`; card.style.opacity = '0'; setTimeout(() => { if(dir > 0) { matches++; maybeMatch(item); } index = (index + 1) % profiles.length; if(dir < 0) renderStack(); }, 260); }
-  card.addEventListener('pointerdown', onDown); card.addEventListener('pointermove', onMove); card.addEventListener('pointerup', onUp); card.addEventListener('pointercancel', onUp);
-  card._swipeRight = () => finishSwipe(1); card._swipeLeft = () => finishSwipe(-1);
+function renderJobs(filter = 'all', query = '') {
+  const term = query.trim().toLowerCase();
+
+  const filteredJobs = jobs.filter((job) => {
+    const matchesFilter = filter === 'all' || job.category === filter;
+    const haystack = `${job.title} ${job.company} ${job.roles.join(' ')} ${job.location}`.toLowerCase();
+    const matchesQuery = haystack.includes(term);
+    return matchesFilter && matchesQuery;
+  });
+
+  if (!filteredJobs.length) {
+    jobList.innerHTML = `
+      <div class="empty-state">
+        <h3>No matching jobs found</h3>
+        <p>Try another keyword or choose another loop category.</p>
+      </div>
+    `;
+    updateDetails(null);
+    return;
+  }
+
+  const activeJob = filteredJobs[0];
+  updateDetails(activeJob);
+
+  jobList.innerHTML = filteredJobs.map((job) => `
+    <article class="job-card" data-title="${job.title}" tabindex="0">
+      <div class="job-main">
+        <div class="job-topline">
+          <span class="remote-badge">${job.location}</span>
+        </div>
+        <h3 class="job-title">${job.title}</h3>
+        <div class="job-salary">${job.salary}</div>
+        <div class="job-meta">
+          <span class="meta-item">${job.type}</span>
+          <span class="meta-item">${job.experience}</span>
+          <span class="meta-item">${job.education}</span>
+        </div>
+        <div class="job-footer">
+          <span class="avatar" aria-hidden="true"></span>
+          <span>${job.company}</span>
+        </div>
+      </div>
+
+      <div class="job-company">
+        <img class="company-photo" src="${job.photo}" alt="${job.company} logo" />
+        <div class="company-box">
+          <div class="company-name">${job.company}</div>
+          <div class="company-stat">${job.companyMeta}</div>
+        </div>
+      </div>
+    </article>
+  `).join('');
+
+  const cards = document.querySelectorAll('.job-card');
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const selected = jobs.find((job) => job.title === card.dataset.title);
+      if (selected) {
+        cards.forEach((item) => item.classList.remove('selected'));
+        card.classList.add('selected');
+        updateDetails(selected);
+      }
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
+        card.click();
+      }
+    });
+  });
 }
 
-function maybeMatch(item){ matchPhoto.style.backgroundImage = `url('${item.photo}')`; matchText.textContent = `${item.name} just clicked for you.`; matchOverlay.classList.add('open'); }
-function openSheet(item){ sheetTitle.textContent = `${item.name}, ${item.age}`; sheetSub.textContent = `${item.role} · ${item.gender}`; sheetSkills.innerHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join(''); sheetExplain.textContent = item.bio; sheetOverlay.classList.add('open'); }
-document.getElementById('closeSheet').addEventListener('click', () => sheetOverlay.classList.remove('open'));
-document.getElementById('keepSwiping').addEventListener('click', () => { matchOverlay.classList.remove('open'); renderStack(); });
-document.getElementById('viewRecipe').addEventListener('click', () => { matchOverlay.classList.remove('open'); openSheet(profiles[(index + profiles.length - 1) % profiles.length]); renderStack(); });
-document.getElementById('nopeBtn').addEventListener('click', () => stackEl.querySelector('.card')?._swipeLeft());
-document.getElementById('loveBtn').addEventListener('click', () => stackEl.querySelector('.card')?._swipeRight());
-document.getElementById('infoBtn').addEventListener('click', () => openSheet(currentProfile()));
-renderStack();
+filterButtons.forEach((button) => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
+    renderJobs(button.dataset.filter, searchInput.value);
+  });
+});
+
+searchInput.addEventListener('input', (event) => {
+  const activeFilter = document.querySelector('.loop-filter.active')?.dataset.filter || 'all';
+  renderJobs(activeFilter, event.target.value);
+});
+
+renderJobs('all', '');
