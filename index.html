@@ -13,15 +13,15 @@
 
   <div class="topbar">
     <div class="logo">Swipe<span>Career</span></div>
-    <div class="streak">🔥 0 concepts learned</div>
+    <div class="streak">♥ 0 matches · 1 / 10</div>
   </div>
 
   <div class="stack" id="stack"></div>
 
   <div class="actions">
-    <button class="actionBtn nope" id="nopeBtn" aria-label="Skip this concept">✕</button>
-    <button class="actionBtn info" id="infoBtn" aria-label="See full explanation">i</button>
-    <button class="actionBtn love" id="loveBtn" aria-label="Mark as learned">♥</button>
+    <button class="actionBtn nope" id="nopeBtn" aria-label="Skip this profile">✕</button>
+    <button class="actionBtn info" id="infoBtn" aria-label="See full profile">i</button>
+    <button class="actionBtn love" id="loveBtn" aria-label="Like this profile">♥</button>
   </div>
 </div>
 
@@ -29,24 +29,20 @@
   <div class="sheet">
     <h3 id="sheetTitle">How it works</h3>
     <div class="sub" id="sheetSub"></div>
-    <div class="section-label">Code</div>
-    <div class="codebox" id="sheetCode"></div>
-    <div class="section-label">Console output</div>
-    <div class="console" id="sheetConsole"></div>
-    <div class="section-label">Explanation</div>
+    <div class="section-label">Key skills</div>
+    <div class="tags sheet-tags" id="sheetSkills"></div>
+    <div class="section-label">About</div>
     <div class="explain" id="sheetExplain"></div>
     <button class="closeSheet" id="closeSheet">Got it</button>
   </div>
 </div>
-
 <div class="match-overlay" id="matchOverlay">
   <h1>It clicked!</h1>
   <div class="match-photo" id="matchPhoto"></div>
-  <p id="matchText">You and this concept are clearly compatible.</p>
-  <button class="match-cta" id="viewRecipe">Review the code</button>
+  <p id="matchText">You and this profile are clearly compatible.</p>
+  <button class="match-cta" id="viewRecipe">Review the profile</button>
   <button class="keep-swiping" id="keepSwiping">Keep swiping</button>
 </div>
-
 <script src="script.js"></script>
 </body>
 </html>
