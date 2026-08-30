@@ -70,6 +70,42 @@
             <p>Tap any listing to learn more about the role, salary, work setup, and responsibilities.</p>
           </div>
 
+          <div id="loopConsolePanel" class="loop-console-panel" aria-live="polite">
+            <div class="loop-console-header">
+              <h4>Loop Console</h4>
+              <span id="loopPromptLabel" class="loop-prompt-label">For loop</span>
+            </div>
+
+            <div class="live-block">
+              <label>Live prompt</label>
+              <textarea id="livePromptEditor" class="live-editor" rows="4">for (int i = 0; i &lt; 5; i++) {
+    System.out.println(i);
+}</textarea>
+            </div>
+
+            <div class="editor-grid single-column">
+              <div class="live-block">
+                <label>Live console</label>
+                <textarea id="liveConsoleEditor" class="live-editor" rows="4">0
+1
+2
+3
+4</textarea>
+                <pre id="liveConsole" class="live-console">0
+1
+2
+3
+4</pre>
+              </div>
+
+              <div class="live-block">
+                <label>Live output</label>
+                <textarea id="liveOutputEditor" class="live-editor" rows="3">Printed values: 0, 1, 2, 3, 4</textarea>
+                <pre id="liveOutput" class="live-output">Printed values: 0, 1, 2, 3, 4</pre>
+              </div>
+            </div>
+          </div>
+
           <div class="promo-card promo-purple">
             <span class="promo-tag">Exclusive VIP</span>
             <h3>Priority Access to AI Career Coaching Feature</h3>
