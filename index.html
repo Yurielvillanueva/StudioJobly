@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SwipeCareer</title>
+    <title>StudioJobly</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -11,7 +11,7 @@
   </head>
   <body>
     <header class="top-nav">
-      <div class="logo">SwipeCareer</div>
+      <div class="logo">StudioJobly</div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="#">Home</a>
         <a href="#">Find Jobs</a>
@@ -72,36 +72,35 @@
 
           <div id="loopConsolePanel" class="loop-console-panel" aria-live="polite">
             <div class="loop-console-header">
-              <h4>Loop Console</h4>
+              <h4>Loop Playground</h4>
               <span id="loopPromptLabel" class="loop-prompt-label">For loop</span>
             </div>
 
+            <p id="loopAbout" class="loop-about"></p>
+
             <div class="live-block">
-              <label>Live prompt</label>
-              <textarea id="livePromptEditor" class="live-editor" rows="4">for (int i = 0; i &lt; 5; i++) {
+              <label for="livePromptEditor">Try it — write or edit your own loop</label>
+              <textarea id="livePromptEditor" class="live-editor" rows="6" spellcheck="false">for (int i = 1; i <= 3; i++) {
     System.out.println(i);
 }</textarea>
             </div>
 
+            <div class="console-actions">
+              <button id="runExplainBtn" class="run-btn" type="button">▶ Run &amp; Explain</button>
+              <button id="resetPromptBtn" class="reset-example-btn" type="button">↺ Reset example</button>
+            </div>
+
+            <p id="runStatus" class="run-status"></p>
+
             <div class="editor-grid single-column">
               <div class="live-block">
-                <label>Live console</label>
-                <textarea id="liveConsoleEditor" class="live-editor" rows="4">0
-1
-2
-3
-4</textarea>
-                <pre id="liveConsole" class="live-console">0
-1
-2
-3
-4</pre>
+                <label>Console output</label>
+                <pre id="liveConsole" class="live-console"></pre>
               </div>
 
               <div class="live-block">
-                <label>Live output</label>
-                <textarea id="liveOutputEditor" class="live-editor" rows="3">Printed values: 0, 1, 2, 3, 4</textarea>
-                <pre id="liveOutput" class="live-output">Printed values: 0, 1, 2, 3, 4</pre>
+                <label>Step-by-step explanation</label>
+                <div id="explanationBox" class="explanation-box"></div>
               </div>
             </div>
           </div>
@@ -130,3 +129,8 @@
     <script src="script.js"></script>
   </body>
 </html>
+
+
+
+
+
